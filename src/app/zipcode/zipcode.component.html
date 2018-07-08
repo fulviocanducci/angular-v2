@@ -1,0 +1,41 @@
+<app-title content="Busca Código Postal"></app-title>
+<div class="row">  
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="input-group">
+      <input [(ngModel)]="cep" [ngModelOptions]="{standalone: true}"  type="text" class="form-control" placeholder="Digite o número">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" (click)="find()">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+      </span>
+    </div>
+  </div>  
+</div>
+<br />
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h5 class="panel-title">Resultado</h5>
+  </div>
+  <div class="panel-body" *ngIf="zip && zip.cep">
+    <code *ngIf="zip && zip.cep">cep</code>
+    <p>{{zip.cep}}</p>
+    <code *ngIf="zip && zip.logradouro">cep</code>
+    <p>{{zip.logradouro}}</p>
+    <code *ngIf="zip && zip.complemento">complemento</code>
+    <p>{{zip.complemento}}</p>
+    <code *ngIf="zip && zip.bairro">bairro</code>
+    <p>{{zip.bairro}}</p>
+    <code *ngIf="zip && zip.localidade">localidade</code>
+    <p>{{zip.localidade}}</p>
+    <code *ngIf="zip && zip.uf">uf</code>
+    <p>{{zip.uf}}</p>
+    <code *ngIf="zip && zip.unidade">unidade</code>
+    <p>{{zip.unidade}}</p>
+    <code *ngIf="zip && zip.ibge">ibge</code>
+    <p>{{zip.ibge}}</p>
+    <code *ngIf="zip && zip.gia">gia</code>
+    <p>{{zip.gia}}</p>
+  </div>
+</div>
+
+
