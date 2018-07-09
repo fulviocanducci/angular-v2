@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Zip } from 'models/zip';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-zipcode',
@@ -12,22 +12,17 @@ export class ZipcodeComponent implements OnInit {
   zip: Zip;
   cep: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private service: AppService) { }
 
   ngOnInit() {
   }
 
-  find() {
-    this.http.get('http://viacep.com.br/ws/' + this.cep + '/json/')
-      .subscribe((data: any) => {
-          if (data.erro === true) {
-            this.zip = null;
-          } else {
-            this.zip = data;
-          }
-        }, error => {
-          console.log(error);
-        });
+  find(): void {
+    this.service
+      .getZip(this.cep)
+      .subscribe((data: Zip) => {
+        this.zip = data;
+      });
   }
 
 }
