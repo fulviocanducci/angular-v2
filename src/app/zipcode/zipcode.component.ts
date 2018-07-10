@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Zip } from 'models/zip';
 import { AppService } from '../app.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-zipcode',
@@ -18,11 +19,30 @@ export class ZipcodeComponent implements OnInit {
   }
 
   find(): void {
+    this.zip = null;
     this.service
       .getZip(this.cep)
       .subscribe((data: Zip) => {
-        this.zip = data;
+        if (data.hasOwnProperty('erro')) {
+          this.message();
+        } else {
+          this.zip = data;
+        }
+      }, error => {
+        this.message();
       });
   }
 
+  private message(): void {
+    swal('Erro', 'Cep inválido');
+  }
+
+
+  numberOnly(event): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+  }
 }
