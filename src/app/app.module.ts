@@ -7,13 +7,17 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ZipcodeComponent } from './zipcode/zipcode.component';
 import { TitleComponent } from './title/title.component';
+import { LittleOffersComponent } from './little-offers/little-offers.component';
+import { AddresscodeComponent } from './addresscode/addresscode.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ZipcodeComponent,
-    TitleComponent
+    TitleComponent,
+    LittleOffersComponent,
+    AddresscodeComponent
   ],
   imports: [
     BrowserModule,

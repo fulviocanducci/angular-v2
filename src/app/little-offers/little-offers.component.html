@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <!--<div class="panel-heading">{{model.cep}}</div>-->
+  <div class="panel-body border-marge">
+    <h6><small>Cep</small></h6>
+    <p>{{model.cep}}</p>
+    <h6 *ngIf="model.logradouro"><small>Logradouro</small></h6>
+    <p>{{model.logradouro}}</p>
+    <h6 *ngIf="model.complemento"><small>Complemento</small></h6>
+    <p>{{model.complemento}}</p>
+    <h6 *ngIf="model.bairro"><small>Bairro</small></h6>
+    <p>{{model.bairro}}</p>
+    <h6 *ngIf="model.localidade"><small>Cidade</small></h6>
+    <p>{{model.localidade}} / {{model.uf}}</p>
+    <h6 *ngIf="model.unidade"><small>Unidade</small></h6>
+    <p>{{model.unidade}}</p>
+    <h6 *ngIf="model.ibge"><small>IBGE</small></h6>
+    <p>{{model.ibge}}</p>
+    <h6 *ngIf="model.gia"><small>Gia</small></h6>
+    <p>{{model.gia}}</p>
+  </div>
+</div>

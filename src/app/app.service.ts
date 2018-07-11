@@ -11,4 +11,8 @@ export class AppService {
   getZip(cep: string) {
     return this.http.get('http://viacep.com.br/ws/' + cep + '/json/');
   }
+
+  getAddress(uf: string, city: string, address: string) {
+    return this.http.get('http://viacep.com.br/ws/' + uf + '/' + city + '/' + address + '/json/ ');
+  }
 }

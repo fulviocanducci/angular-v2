@@ -1,0 +1,37 @@
+<app-title content="Busca por Endereço"></app-title>
+<div class="row">
+  <div class="col-xs-4 col-sm-4 col-md-4">
+    <select class="form-control" [(ngModel)]="uf">
+      <option value="SP">SP</option>
+      <option value="RJ">RJ</option>
+    </select>
+  </div>
+  <div class="col-xs-8 col-sm-8 col-md-8">
+    <input type="text" [(ngModel)]="city" class="form-control" placeholder="Cidade">
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <input type="text" [(ngModel)]="address" class="form-control" placeholder="Endereço">
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <button class="btn btn-primary btn-block" (click)="find()" [disabled]="disableBtn()">Buscar</button>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div *ngIf="listZip && listZip.length>0" class="col-xs-12 col-sm-12 col-md-12">
+
+    <h6>Total de itens encontrados:
+      <b>{{ listZip.length }}</b>
+    </h6>
+
+    <div *ngFor="let zip of listZip">
+      <app-little-offers [model]="zip"></app-little-offers>
+    </div>
+  </div>
+</div>

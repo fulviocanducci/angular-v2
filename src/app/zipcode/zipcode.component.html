@@ -13,28 +13,8 @@
   </div>
 </div>
 <br />
-<div class="panel panel-info" *ngIf="zip && zip.cep">
-  <div class="panel-heading">
-    <h5 class="panel-title">Resultado</h5>
-  </div>
-  <div class="panel-body">
-    <code *ngIf="zip && zip.cep">cep</code>
-    <p>{{zip.cep}}</p>
-    <code *ngIf="zip && zip.logradouro">cep</code>
-    <p>{{zip.logradouro}}</p>
-    <code *ngIf="zip && zip.complemento">complemento</code>
-    <p>{{zip.complemento}}</p>
-    <code *ngIf="zip && zip.bairro">bairro</code>
-    <p>{{zip.bairro}}</p>
-    <code *ngIf="zip && zip.localidade">localidade</code>
-    <p>{{zip.localidade}}</p>
-    <code *ngIf="zip && zip.uf">uf</code>
-    <p>{{zip.uf}}</p>
-    <code *ngIf="zip && zip.unidade">unidade</code>
-    <p>{{zip.unidade}}</p>
-    <code *ngIf="zip && zip.ibge">ibge</code>
-    <p>{{zip.ibge}}</p>
-    <code *ngIf="zip && zip.gia">gia</code>
-    <p>{{zip.gia}}</p>
+<div class="row">
+  <div *ngIf="zip && zip.cep" class="col-xs-12 col-sm-12 col-md-12">
+    <app-little-offers [model]="zip"></app-little-offers>
   </div>
 </div>
