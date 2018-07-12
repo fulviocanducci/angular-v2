@@ -15,4 +15,8 @@ export class AppService {
   getAddress(uf: string, city: string, address: string) {
     return this.http.get('http://viacep.com.br/ws/' + uf + '/' + city + '/' + address + '/json/ ');
   }
+
+  getUf() {
+    return this.http.get('./assets/uf.json');
+  }
 }

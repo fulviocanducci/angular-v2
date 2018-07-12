@@ -2,8 +2,7 @@
 <div class="row">
   <div class="col-xs-4 col-sm-4 col-md-4">
     <select class="form-control" [(ngModel)]="uf">
-      <option value="SP">SP</option>
-      <option value="RJ">RJ</option>
+      <option *ngFor="let p of listUf" [value]="p.uf">{{p.uf}}</option>
     </select>
   </div>
   <div class="col-xs-8 col-sm-8 col-md-8">

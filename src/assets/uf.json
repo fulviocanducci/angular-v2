@@ -1,0 +1,137 @@
+[
+  {
+    "state_code": 11,
+    "state_name": "RONDONIA",
+    "uf": "RO"
+  },
+  {
+    "state_code": 12,
+    "state_name": "ACRE",
+    "uf": "AC"
+  },
+  {
+    "state_code": 13,
+    "state_name": "AMAZONAS",
+    "uf": "AM"
+  },
+  {
+    "state_code": 14,
+    "state_name": "RORAIMA",
+    "uf": "RR"
+  },
+  {
+    "state_code": 15,
+    "state_name": "PARA",
+    "uf": "PA"
+  },
+  {
+    "state_code": 16,
+    "state_name": "AMAPA",
+    "uf": "AP"
+  },
+  {
+    "state_code": 17,
+    "state_name": "TOCANTINS",
+    "uf": "TO"
+  },
+  {
+    "state_code": 21,
+    "state_name": "MARANHAO",
+    "uf": "MA"
+  },
+  {
+    "state_code": 22,
+    "state_name": "PIAUI",
+    "uf": "PI"
+  },
+  {
+    "state_code": 23,
+    "state_name": "CEARA",
+    "uf": "CE"
+  },
+  {
+    "state_code": 24,
+    "state_name": "RIO GRANDE DO NORTE",
+    "uf": "RN"
+  },
+  {
+    "state_code": 25,
+    "state_name": "PARAIBA",
+    "uf": "PB"
+  },
+  {
+    "state_code": 26,
+    "state_name": "PERNAMBUCO",
+    "uf": "PE"
+  },
+  {
+    "state_code": 27,
+    "state_name": "ALAGOAS",
+    "uf": "AL"
+  },
+  {
+    "state_code": 28,
+    "state_name": "SERGIPE",
+    "uf": "SE"
+  },
+  {
+    "state_code": 29,
+    "state_name": "BAHIA",
+    "uf": "BA"
+  },
+  {
+    "state_code": 31,
+    "state_name": "MINAS GERAIS",
+    "uf": "MG"
+  },
+  {
+    "state_code": 32,
+    "state_name": "ESPIRITO SANTO",
+    "uf": "ES"
+  },
+  {
+    "state_code": 33,
+    "state_name": "RIO DE JANEIRO",
+    "uf": "RJ"
+  },
+  {
+    "state_code": 35,
+    "state_name": "SAO PAULO",
+    "uf": "SP"
+  },
+  {
+    "state_code": 41,
+    "state_name": "PARANA",
+    "uf": "PR"
+  },
+  {
+    "state_code": 42,
+    "state_name": "SANTA CATARINA",
+    "uf": "SC"
+  },
+  {
+    "state_code": 43,
+    "state_name": "RIO GRANDE DO SUL",
+    "uf": "RS"
+  },
+  {
+    "state_code": 50,
+    "state_name": "MATO GROSSO DO SUL",
+    "uf": "MS"
+  },
+  {
+    "state_code": 51,
+    "state_name": "MATO GROSSO",
+    "uf": "MT"
+  },
+  {
+    "state_code": 52,
+    "state_name": "GOIAS",
+    "uf": "GO"
+  },
+  {
+    "state_code": 53,
+    "state_name": "DISTRITO FEDERAL",
+    "uf": "DF"
+  }
+]
