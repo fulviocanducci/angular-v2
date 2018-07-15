@@ -22,27 +22,19 @@ export class ZipcodeComponent implements OnInit {
     this.zip = null;
     this.service
       .getZip(this.cep)
-      .subscribe((data: Zip) => {
-        if (data.hasOwnProperty('erro')) {
+        .subscribe((data: Zip) => {
+          if (data.hasOwnProperty('erro')) {
+            this.message();
+          } else {
+            this.zip = data;
+          }
+        }, error => {
           this.message();
-        } else {
-          this.zip = data;
-        }
-      }, error => {
-        this.message();
-      });
+        });
   }
 
   private message(): void {
     swal('Erro', 'Cep inválido');
   }
 
-
-  numberOnly(event): boolean {
-    const charCode = (event.which) ? event.which : event.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-      return false;
-    }
-    return true;
-  }
 }

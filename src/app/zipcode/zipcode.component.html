@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-12">
     <div class="input-group">
-      <input [(ngModel)]="cep" (keypress)="numberOnly($event)" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+      <input [(ngModel)]="cep" mask="99999999" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
         placeholder="Digite o número" maxlength="8">
       <span class="input-group-btn">
         <button class="btn btn-primary" type="button" (click)="find()" [disabled]="!cep || cep.length < 8">

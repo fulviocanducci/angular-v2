@@ -9,6 +9,7 @@ import { ZipcodeComponent } from './zipcode/zipcode.component';
 import { TitleComponent } from './title/title.component';
 import { LittleOffersComponent } from './little-offers/little-offers.component';
 import { AddresscodeComponent } from './addresscode/addresscode.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AddresscodeComponent } from './addresscode/addresscode.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxMaskModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
