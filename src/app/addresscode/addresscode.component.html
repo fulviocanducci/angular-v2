@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-xs-4 col-sm-4 col-md-4">
     <select class="form-control" [(ngModel)]="uf">
-      <option *ngFor="let p of listUf" [value]="p.uf">{{p.uf}}</option>
+    <option *ngFor="let p of listUf | orderBy:'uf'" [value]="p.uf">{{p.uf}}</option>
     </select>
   </div>
   <div class="col-xs-8 col-sm-8 col-md-8">
@@ -17,18 +17,25 @@
 </div>
 <br />
 <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-12">
-    <button class="btn btn-primary btn-block" (click)="find()" [disabled]="disableBtn()">Buscar</button>
+  <div class="col-xs-6 col-sm-6 col-md-6">
+    <button class="btn btn-primary btn-block" (click)="find()" [disabled]="disableBtn()">
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar
+    </button>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-6">
+    <button class="btn btn-danger btn-block" type="button" (click)="clean()" [disabled]="disableBtn()">
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Limpar
+    </button>
   </div>
 </div>
 <br />
 <div class="row">
-  <div *ngIf="listZip && listZip.length>0" class="col-xs-12 col-sm-12 col-md-12">
-
-    <h6>Total de itens encontrados:
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <h6 *ngIf="listZip">Total de itens encontrados:
       <b>{{ listZip.length }}</b>
     </h6>
-
+  </div>
+  <div *ngIf="listZip && listZip.length>0" class="col-xs-12 col-sm-12 col-md-12">
     <div *ngFor="let zip of listZip">
       <app-little-offers [model]="zip"></app-little-offers>
     </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Zip } from 'models/zip';
 import { AppService } from '../app.service';
 import { Uf } from 'models/uf';
+import { OrderPipe } from 'ngx-order-pipe';
 
 @Component({
   selector: 'app-addresscode',
@@ -16,12 +17,11 @@ export class AddresscodeComponent implements OnInit {
   city: string;
   address: string;
 
-  constructor(private service: AppService) { }
+  constructor(private service: AppService, private orderPipe: OrderPipe) { }
 
   ngOnInit() {
-    this.listZip = new Array<Zip>();
+    this.clean();
     this.loadUfFromJson();
-    this.uf = 'SP';
   }
 
   find() {
@@ -48,8 +48,13 @@ export class AddresscodeComponent implements OnInit {
       this.service.getUf()
         .subscribe((data: Array<Uf>) => {
             this.listUf = data;
-            console.log(this.listUf);
         });
   }
 
+  clean() {
+    this.uf = 'SP';
+    this.city = '';
+    this.address = '';
+    this.listZip = new Array<Zip>();
+  }
 }

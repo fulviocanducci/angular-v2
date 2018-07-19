@@ -19,4 +19,12 @@ export class AppService {
   getUf() {
     return this.http.get('./assets/uf.json');
   }
+
+  getUserGithub(userName: string) {
+    return this.http.get('https://api.github.com/users/[0]'.replace('[0]', userName));
+  }
+
+  getUserGithubRepository(userName: string) {
+    return this.http.get('https://api.github.com/users/[0]/repos'.replace('[0]', userName));
+  }
 }

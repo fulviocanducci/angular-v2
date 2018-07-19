@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Zip } from 'models/zip';
 import { AppService } from '../app.service';
 import swal from 'sweetalert';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-zipcode',
@@ -15,8 +16,7 @@ export class ZipcodeComponent implements OnInit {
 
   constructor(private service: AppService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   find(): void {
     this.zip = null;
@@ -35,6 +35,11 @@ export class ZipcodeComponent implements OnInit {
 
   private message(): void {
     swal('Erro', 'Cep inválido');
+  }
+
+  clean() {
+    this.zip = null;
+    this.cep = '';
   }
 
 }

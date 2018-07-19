@@ -1,3 +1,4 @@
+https://transform.now.sh/json-to-ts-interface/
 {
   "name": "myapp",
   "version": "0.0.0",

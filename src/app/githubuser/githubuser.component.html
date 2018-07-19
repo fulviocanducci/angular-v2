@@ -1,0 +1,55 @@
+<app-title content="Informações do Usuário do Github"></app-title>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="input-group">
+      <input [(ngModel)]="userName" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Digite o nome do usuário"
+        maxlength="100">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" (click)="find()" [disabled]="!userName || userName.length<0">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Busca
+        </button>
+        <button class="btn btn-danger" type="button" (click)="clean()" [disabled]="!userName || userName.length<0">
+          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+<br />
+<div class="row" *ngIf="this.user">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <img src="{{this.user.avatar_url}}" class="img-responsive" class="img-circle"  alt="{{this.user.name}}">
+      <div class="caption">
+      <h3>{{this.user.name}}</h3>
+        <p>
+          Seguidores: {{this.user.followers}} | Segue: {{this.user.following}}
+        </p>
+        <p>
+          Github Url: {{this.user.html_url}}
+        </p>
+        <p>
+          <button type="button" class="btn btn-primary btn-block" (click)="findRepository()" role="button">
+            <span class="glyphicon glyphicon-list-alt"></span> Respositorios
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div *ngIf="repository && repository.length > 0">
+  <h4>Repositorios: {{this.user.name}}</h4>
+  <hr />
+  <h5>Quantidade: {{repository.length}}</h5>
+  <div class="panel panel-default" *ngFor="let r of repository">
+    <div class="panel-body border-marge">
+      <h6><small>Descrição</small></h6>
+      <p><a href="{{r.html_url}}">{{r.full_name}}</a></p>
+      <h6><small>Criado em:</small></h6>
+      <p>{{r.created_at | date:'dd/MM/yyyy HH:mm:ss':'UTC'}}</p>
+      <h6><small>Linguagem:</small></h6>
+      <p>{{r.language}}</p>
+    </div>
+  </div>
+</div>
